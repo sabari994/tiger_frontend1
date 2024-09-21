@@ -9,9 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  
   loginForm: FormGroup;
   isLoading = false;
   errorMessage: string | null = null;
+
   constructor(
     public fb: FormBuilder, 
     public http: HttpClient, 
