@@ -1,0 +1,32 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+    <h2>Register</h2>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+  
+    <div>
+      <label>Username:</label>
+      <input formControlName="username" [class.invalid]="formControls.username.invalid && (formControls.username.touched || formControls.username.dirty)" />
+      <div *ngIf="formControls.username.invalid && (formControls.username.touched || formControls.username.dirty)" class="error">
+        Username is required.
+      </div>
+    </div>
+  
+    <div>
+      <label>Email:</label>
+      <input formControlName="email" type="email" [class.invalid]="formControls.email.invalid && (formControls.email.touched || formControls.email.dirty)" />
+      <div *ngIf="formControls.email.invalid && (formControls.email.touched || formControls.email.dirty)" class="error">
+        Valid email is required.
+      </div>
+    </div>
+  
+    <div>
+      <label>Password:</label>
+      <input formControlName="password" type="password" [class.invalid]="formControls.password.invalid && (formControls.password.touched || formControls.password.dirty)" />
+      <div *ngIf="formControls.password.invalid && (formControls.password.touched || formControls.password.dirty)" class="error">
+        Password must be at least 6 characters.
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="isLoading">Register</button>
+    <p *ngIf="isLoading">Please wait...</p>
+  </form>
+  

@@ -1,0 +1,101 @@
+// Base styles
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$danger-color: #dc3545;
+$warning-color: #ffc107;
+$info-color: #17a2b8;
+$light-color: #f8f9fa;
+$dark-color: #343a40;
+$font-family: 'Arial', sans-serif;
+
+// Login page styles
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.image-container {
+  flex: 1;
+  background-image: url('../../assets/image/image.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.form-container {
+  flex: 1;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5); // Optional: Add a translucent overlay
+}
+
+// Form styles
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+input.form-control {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: $dark-color;
+  background-color: $light-color;
+  border: 1px solid $secondary-color;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+input.form-control:focus {
+  border-color: $primary-color;
+  outline: 0;
+}
+
+.invalid-feedback {
+  color: $danger-color;
+  font-size: 0.875rem;
+}
+
+button.btn {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+button.btn-primary {
+  color: #fff;
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+}
+
+button.btn-primary:hover {
+  background-color: darken($primary-color, 10%);
+}
+
+button.btn:disabled {
+  opacity: 0.65;
+}
+
+.spinner-border {
+  width: 1rem;
+  height: 1rem;
+  border: 0.25rem solid currentColor;
+  border-right: 0.25rem solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
